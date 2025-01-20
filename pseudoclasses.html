@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-Classes and Pseudo-Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .example {
+      margin: 20px 0;
+    }
+
+    /* Pseudo-Classes Examples */
+    a:hover {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    a:active {
+      color: green;
+    }
+
+    input:focus {
+      border: 2px solid blue;
+    }
+
+    p:first-child {
+      font-weight: bold;
+    }
+
+    li:nth-child(even) {
+      background: #f0f0f0;
+    }
+
+    li:nth-child(odd) {
+      background: #d9d9d9;
+    }
+
+    div:last-child {
+      color: #e74c3c;
+    }
+
+    div:not(.excluded) {
+      border: 1px solid #2ecc71;
+      padding: 10px;
+    }
+
+    button:disabled {
+      background-color: #bdc3c7;
+      color: #7f8c8d;
+    }
+
+    /* Pseudo-Elements Examples */
+    p::first-line {
+      color: blue;
+      font-style: italic;
+    }
+
+    p::first-letter {
+      font-size: 2em;
+      color: #e67e22;
+    }
+
+    div::before {
+      content: "Before: ";
+      color: #2980b9;
+    }
+
+    div::after {
+      content: " (After)";
+      color: #c0392b;
+    }
+
+    ::selection {
+      background: yellow;
+      color: black;
+    }
+
+    ::placeholder {
+      color: gray;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Pseudo-Classes and Pseudo-Elements</h1>
+
+  <section>
+    <h2>Pseudo-Classes</h2>
+    <div class="example">
+      <p><strong>Hover, Active, and Visited Links:</strong></p>
+      <a href="#">Hover over me</a>
+    </div>
+
+    <div class="example">
+      <p><strong>Focus on Input:</strong></p>
+      <input type="text" placeholder="Focus on me">
+    </div>
+
+    <div class="example">
+      <p><strong>First Child:</strong></p>
+      <p>This is the first paragraph.</p>
+      <p>This is another paragraph.</p>
+    </div>
+
+    <div class="example">
+      <p><strong>nth-child:</strong></p>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <p><strong>Last Child:</strong></p>
+      <div>First div</div>
+      <div>Second div</div>
+      <div>Last div</div>
+    </div>
+
+    <div class="example">
+      <p><strong>:not Selector:</strong></p>
+      <div>Included</div>
+      <div class="excluded">Excluded</div>
+      <div>Included</div>
+    </div>
+
+    <div class="example">
+      <p><strong>Disabled Button:</strong></p>
+      <button disabled>Disabled Button</button>
+      <button>Enabled Button</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pseudo-Elements</h2>
+    <div class="example">
+      <p><strong>::first-line and ::first-letter:</strong></p>
+      <p>This is a paragraph demonstrating the use of ::first-line and ::first-letter pseudo-elements.</p>
+    </div>
+
+    <div class="example">
+      <p><strong>::before and ::after:</strong></p>
+      <div>Content in the div</div>
+    </div>
+
+    <div class="example">
+      <p><strong>::selection:</strong></p>
+      <p>Try selecting this text to see the ::selection pseudo-element in action.</p>
+    </div>
+
+    <div class="example">
+      <p><strong>::placeholder:</strong></p>
+      <input type="text" placeholder="This is a placeholder">
+    </div>
+  </section>
+
+</body>
+</html>
