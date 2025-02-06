@@ -1,216 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Form and Input Elements Examples</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Form Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Complete Form Example</h1>
+  <form id="completeForm">
+    <!-- Text Input -->
+    <label for="text">Text:</label>
+    <input type="text" id="text" name="text" placeholder="Enter text">
+
+    <!-- Password Input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password">
+
+    <!-- Email Input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email">
+
+    <!-- Number Input -->
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number" placeholder="Enter number">
+
+    <!-- Date Input -->
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+
+    <!-- Color Input -->
+    <label for="color">Color:</label>
+    <input type="color" id="color" name="color">
+
+    <!-- File Input -->
+    <label for="file">File:</label>
+    <input type="file" id="file" name="file">
+
+    <!-- Checkbox -->
+    <label for="subscribe">
+      <input type="checkbox" id="subscribe" name="subscribe"> Subscribe to newsletter
+    </label>
+
+    <!-- Radio Buttons -->
+    <label>Gender:</label>
+    <label for="male">
+      <input type="radio" id="male" name="gender" value="male"> Male
+    </label>
+    <label for="female">
+      <input type="radio" id="female" name="gender" value="female"> Female
+    </label>
+
+    <!-- Dropdown -->
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="usa">USA</option>
+      <option value="canada">Canada</option>
+      <option value="uk">UK</option>
+    </select>
+
+    <!-- Textarea -->
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" placeholder="Enter comments"></textarea>
+
+    <!-- Range Input -->
+    <label for="range">Range:</label>
+    <input type="range" id="range" name="range" min="0" max="100">
+
+    <!-- Search Input -->
+    <label for="search">Search:</label>
+    <input type="search" id="search" name="search" placeholder="Enter search term">
+
+    <!-- Tel Input -->
+    <label for="tel">Telephone:</label>
+    <input type="tel" id="tel" name="tel" placeholder="Enter phone number">
+
+    <!-- URL Input -->
+    <label for="url">URL:</label>
+    <input type="url" id="url" name="url" placeholder="Enter URL">
+
+    <!-- Buttons -->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <script>
+    // Function to log form inputs
+    function logFormInputs() {
+      // Get all form inputs
+      const text = document.getElementById('text').value;
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const number = document.getElementById('number').value;
+      const date = document.getElementById('date').value;
+      const color = document.getElementById('color').value;
+      const file = document.getElementById('file').files[0]?.name || 'No file selected';
+      const subscribe = document.getElementById('subscribe').checked;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value;
+      const country = document.getElementById('country').value;
+      const comments = document.getElementById('comments').value;
+      const range = document.getElementById('range').value;
+      const search = document.getElementById('search').value;
+      const tel = document.getElementById('tel').value;
+      const url = document.getElementById('url').value;
+
+      // Log inputs to the console
+      console.log('Text:', text);
+      console.log('Password:', password);
+      console.log('Email:', email);
+      console.log('Number:', number);
+      console.log('Date:', date);
+      console.log('Color:', color);
+      console.log('File:', file);
+      console.log('Subscribe to newsletter:', subscribe);
+      console.log('Gender:', gender);
+      console.log('Country:', country);
+      console.log('Comments:', comments);
+      console.log('Range:', range);
+      console.log('Search:', search);
+      console.log('Telephone:', tel);
+      console.log('URL:', url);
+    }
+
+    // Add event listener to the form for Enter key press
+    document.getElementById('completeForm').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent form submission
+        logFormInputs(); // Log form inputs
       }
+    });
 
-      section {
-        margin-bottom: 40px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Form and Input Elements Examples</h1>
-
-    <form id="allFormElements">
-      <!-- Text Input -->
-      <label for="text">Text Input:</label>
-      <input
-        type="text"
-        id="text"
-        name="text"
-        placeholder="Enter text"
-      /><br /><br />
-
-      <!-- Password Input -->
-      <label for="password">Password Input:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Enter password"
-      /><br /><br />
-
-      <!-- Email Input -->
-      <label for="email">Email Input:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter email"
-      /><br /><br />
-
-      <!-- Number Input -->
-      <label for="number">Number Input:</label>
-      <input
-        type="number"
-        id="number"
-        name="number"
-        placeholder="Enter number"
-      /><br /><br />
-
-      <!-- Date Input -->
-      <label for="date">Date Input:</label>
-      <input type="date" id="date" name="date" /><br /><br />
-
-      <!-- Color Input -->
-      <label for="color">Color Picker:</label>
-      <input type="color" id="color" name="color" /><br /><br />
-
-      <!-- File Input -->
-      <label for="file">File Upload:</label>
-      <input type="file" id="file" name="file" /><br /><br />
-
-      <!-- Checkbox Input -->
-      <label
-        ><input type="checkbox" name="subscribe" value="newsletter" /> Subscribe
-        to newsletter</label
-      ><br /><br />
-
-      <!-- Radio Buttons -->
-      <fieldset>
-        <legend>Choose an option:</legend>
-        <label
-          ><input type="radio" name="option" value="option1" /> Option 1</label
-        ><br />
-        <label
-          ><input type="radio" name="option" value="option2" /> Option 2</label
-        ><br />
-      </fieldset>
-      <br />
-
-      <!-- Select Dropdown -->
-      <label for="dropdown">Select an option:</label>
-      <select id="dropdown" name="dropdown">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option></select
-      ><br /><br />
-
-      <!-- Textarea -->
-      <label for="textarea">Textarea:</label><br />
-      <textarea
-        id="textarea"
-        name="textarea"
-        rows="4"
-        cols="50"
-        placeholder="Enter text..."
-      ></textarea
-      ><br /><br />
-
-      <!-- Range Input -->
-      <label for="range">Range Input:</label>
-      <input
-        type="range"
-        id="range"
-        name="range"
-        min="0"
-        max="100"
-      /><br /><br />
-
-      <!-- Search Input -->
-      <label for="search">Search Input:</label>
-      <input
-        type="search"
-        id="search"
-        name="search"
-        placeholder="Search..."
-      /><br /><br />
-
-      <!-- Tel Input -->
-      <label for="tel">Telephone Input:</label>
-      <input
-        type="tel"
-        id="tel"
-        name="tel"
-        placeholder="Enter phone number"
-      /><br /><br />
-
-      <!-- URL Input -->
-      <label for="url">URL Input:</label>
-      <input
-        type="url"
-        id="url"
-        name="url"
-        placeholder="https://example.com"
-      /><br /><br />
-
-      <!-- Buttons -->
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </form>
-
-    <script>
-      // Handle form submission
-      const form = document.getElementById("allFormElements");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log("Form Data:", data);
-        alert(JSON.stringify(data, null, 2));
-      });
-    </script>
-
-    <script>
-      // JavaScript to collect and store input data from each form element
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("allFormElements");
-
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
-
-          // Collecting data from form elements
-          const textInput = document.getElementById("text").value;
-          const passwordInput = document.getElementById("password").value;
-          const emailInput = document.getElementById("email").value;
-          const numberInput = document.getElementById("number").value;
-          const dateInput = document.getElementById("date").value;
-          const colorInput = document.getElementById("color").value;
-          const fileInput = document.getElementById("file").files[0];
-          const checkboxInput =
-            form.querySelector('input[name="subscribe"]:checked')?.value ||
-            null;
-          const radioInput =
-            form.querySelector('input[name="option"]:checked')?.value || null;
-          const dropdownInput = document.getElementById("dropdown").value;
-          const textareaInput = document.getElementById("textarea").value;
-          const rangeInput = document.getElementById("range").value;
-          const searchInput = document.getElementById("search").value;
-          const telInput = document.getElementById("tel").value;
-          const urlInput = document.getElementById("url").value;
-
-          // Storing data in variables
-          const formData = {
-            textInput,
-            passwordInput,
-            emailInput,
-            numberInput,
-            dateInput,
-            colorInput,
-            fileInput: fileInput ? fileInput.name : null,
-            checkboxInput,
-            radioInput,
-            dropdownInput,
-            textareaInput,
-            rangeInput,
-            searchInput,
-            telInput,
-            urlInput,
-          };
-
-          console.log("Collected Form Data:", formData);
-          alert(JSON.stringify(formData, null, 2));
-        });
-      });
-    </script>
-  </body>
+    // Add event listener to the form for submission
+    document.getElementById('completeForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      logFormInputs(); // Log form inputs
+    });
+  </script>
+</body>
 </html>
