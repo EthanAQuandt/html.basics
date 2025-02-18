@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Properties Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .example-container {
+        border: 2px solid #333;
+        padding: 20px;
+        margin: 20px 0;
+        background: #f0f0f0;
+      }
+
+      .parent {
+        display: flex;
+        border: 2px dashed #666;
+        margin: 10px 0;
+        padding: 10px;
+        min-height: 150px;
+      }
+
+      .child {
+        background: #4caf50;
+        color: white;
+        padding: 20px;
+        margin: 5px;
+        min-width: 100px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .child:hover {
+        transform: scale(1.05);
+      }
+
+      /* Flex Direction Examples */
+      .direction-row {
+        flex-direction: row;
+      }
+      .direction-row-reverse {
+        flex-direction: row-reverse;
+      }
+      .direction-column {
+        flex-direction: column;
+      }
+      .direction-column-reverse {
+        flex-direction: column-reverse;
+      }
+
+      /* Flex Wrap Examples */
+      .wrap-nowrap {
+        flex-wrap: nowrap;
+      }
+      .wrap-wrap {
+        flex-wrap: wrap;
+      }
+      .wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+
+      /* Justify Content Examples */
+      .justify-start {
+        justify-content: flex-start;
+      }
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .justify-around {
+        justify-content: space-around;
+      }
+      .justify-evenly {
+        justify-content: space-evenly;
+      }
+
+      /* Align Items Examples */
+      .align-start {
+        align-items: flex-start;
+      }
+      .align-end {
+        align-items: flex-end;
+      }
+      .align-center {
+        align-items: center;
+      }
+      .align-baseline {
+        align-items: baseline;
+      }
+      .align-stretch {
+        align-items: stretch;
+      }
+
+      /* Align Content Examples */
+      .content-start {
+        align-content: flex-start;
+      }
+      .content-end {
+        align-content: flex-end;
+      }
+      .content-center {
+        align-content: center;
+      }
+      .content-between {
+        align-content: space-between;
+      }
+      .content-around {
+        align-content: space-around;
+      }
+      .content-stretch {
+        align-content: stretch;
+      }
+
+      /* Item Properties */
+      .order-1 {
+        order: 1;
+      }
+      .order-2 {
+        order: 2;
+      }
+      .order--1 {
+        order: -1;
+      }
+
+      .grow-1 {
+        flex-grow: 1;
+      }
+      .grow-2 {
+        flex-grow: 2;
+      }
+
+      .shrink-0 {
+        flex-shrink: 0;
+      }
+      .shrink-1 {
+        flex-shrink: 1;
+      }
+
+      .basis-200 {
+        flex-basis: 200px;
+      }
+      .basis-auto {
+        flex-basis: auto;
+      }
+
+      .flex-combo {
+        flex: 2 1 200px;
+      }
+
+      .align-self-start {
+        align-self: flex-start;
+      }
+      .align-self-end {
+        align-self: flex-end;
+      }
+      .align-self-center {
+        align-self: center;
+      }
+
+      .tall-child {
+        height: 100px;
+      }
+      .short-child {
+        height: 50px;
+      }
+      .variable-child {
+        height: auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Properties Demo</h1>
+
+    <!-- Flex Direction -->
+    <div class="example-container">
+      <h2>flex-direction</h2>
+      <div class="parent direction-row">
+        <div class="child">row (default)</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent direction-row-reverse">
+        <div class="child">row-reverse</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent direction-column">
+        <div class="child">column</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent direction-column-reverse">
+        <div class="child">column-reverse</div>
+        <div class="child">2</div>
+      </div>
+    </div>
+
+    <!-- Flex Wrap -->
+    <div class="example-container">
+      <h2>flex-wrap</h2>
+      <div class="parent wrap-nowrap" style="max-width: 400px">
+        <div class="child" style="width: 150px">nowrap (default)</div>
+        <div class="child" style="width: 150px">2</div>
+        <div class="child" style="width: 150px">3</div>
+      </div>
+      <div class="parent wrap-wrap" style="max-width: 400px">
+        <div class="child" style="width: 150px">wrap</div>
+        <div class="child" style="width: 150px">2</div>
+        <div class="child" style="width: 150px">3</div>
+      </div>
+      <div class="parent wrap-reverse" style="max-width: 400px">
+        <div class="child" style="width: 150px">wrap-reverse</div>
+        <div class="child" style="width: 150px">2</div>
+        <div class="child" style="width: 150px">3</div>
+      </div>
+    </div>
+
+    <!-- Justify Content -->
+    <div class="example-container">
+      <h2>justify-content</h2>
+      <div class="parent justify-start">
+        <div class="child">flex-start</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent justify-end">
+        <div class="child">flex-end</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent justify-center">
+        <div class="child">center</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent justify-between">
+        <div class="child">space-between</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent justify-around">
+        <div class="child">space-around</div>
+        <div class="child">2</div>
+      </div>
+      <div class="parent justify-evenly">
+        <div class="child">space-evenly</div>
+        <div class="child">2</div>
+      </div>
+    </div>
+
+    <!-- Align Items -->
+    <div class="example-container">
+      <h2>align-items</h2>
+      <div class="parent align-start" style="height: 200px">
+        <div class="child tall-child">flex-start</div>
+        <div class="child short-child">2</div>
+      </div>
+      <div class="parent align-end" style="height: 200px">
+        <div class="child tall-child">flex-end</div>
+        <div class="child short-child">2</div>
+      </div>
+      <div class="parent align-center" style="height: 200px">
+        <div class="child tall-child">center</div>
+        <div class="child short-child">2</div>
+      </div>
+      <div class="parent align-baseline" style="height: 200px">
+        <div class="child variable-child">baseline</div>
+        <div class="child variable-child">2</div>
+      </div>
+      <div class="parent align-stretch" style="height: 200px">
+        <div class="child" style="height: auto">stretch</div>
+        <div class="child" style="height: auto">2</div>
+      </div>
+    </div>
+
+    <!-- Item Properties -->
+    <div class="example-container">
+      <h2>Item Properties</h2>
+      <div class="parent">
+        <div class="child order--1">order -1</div>
+        <div class="child">Default order 0</div>
+        <div class="child order-1">order 1</div>
+      </div>
+
+      <div class="parent">
+        <div class="child grow-1">flex-grow 1</div>
+        <div class="child grow-2">flex-grow 2</div>
+      </div>
+
+      <div class="parent" style="width: 300px">
+        <div class="child shrink-0" style="width: 200px">flex-shrink 0</div>
+        <div class="child shrink-1" style="width: 200px">flex-shrink 1</div>
+      </div>
+
+      <div class="parent">
+        <div class="child basis-200">flex-basis 200px</div>
+        <div class="child basis-auto">flex-basis auto</div>
+      </div>
+
+      <div class="parent">
+        <div class="child flex-combo">flex: 2 1 200px</div>
+        <div class="child">Default</div>
+      </div>
+
+      <div class="parent align-items-center" style="height: 200px">
+        <div class="child align-self-start">align-self start</div>
+        <div class="child">center (inherited)</div>
+        <div class="child align-self-end">align-self end</div>
+      </div>
+    </div>
+  </body>
+</html>
