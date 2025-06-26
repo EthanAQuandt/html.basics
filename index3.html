@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdrachten les 6 – Alerts in Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-4">
+    <h2 class="mb-4">Oefening 3 – Alerts in Bootstrap</h2>
+
+    <!-- Alert 1: Succesvol bericht -->
+    <div class="alert alert-success" role="alert">
+      Dit is een succesvolle melding!
+    </div>
+
+    <!-- Alert 2: Waarschuwing -->
+    <div class="alert alert-warning" role="alert">
+      Let op! Dit is een waarschuwing.
+    </div>
+
+    <!-- Alert 3: Foutmelding -->
+    <div class="alert alert-danger" role="alert">
+      Er is een fout opgetreden!
+    </div>
+
+    <!-- Alert 4: Info -->
+    <div class="alert alert-info" role="alert">
+      Dit is een informatief bericht.
+    </div>
+
+    <!-- Alert 5: Afsluitbare alert -->
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      Dit is een afsluitbare melding.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Sluiten"
+      ></button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
